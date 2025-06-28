@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _56f21018 = () => interopDefault(import('..\\pages\\Alaa-Todo.vue' /* webpackChunkName: "pages/Alaa-Todo" */))
+const _42721aef = () => interopDefault(import('..\\pages\\ComponentL.vue' /* webpackChunkName: "pages/ComponentL" */))
 const _de3216ac = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
 const _3691f3b6 = () => interopDefault(import('..\\pages\\l1.vue' /* webpackChunkName: "pages/l1" */))
 const _3675c4b4 = () => interopDefault(import('..\\pages\\l2.vue' /* webpackChunkName: "pages/l2" */))
@@ -29,6 +30,10 @@ export const routerOptions = {
     path: "/Alaa-Todo",
     component: _56f21018,
     name: "Alaa-Todo"
+  }, {
+    path: "/ComponentL",
+    component: _42721aef,
+    name: "ComponentL"
   }, {
     path: "/inspire",
     component: _de3216ac,

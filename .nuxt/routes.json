@@ -3,63 +3,60 @@
     "name": "Alaa-Todo",
     "path": "/Alaa-Todo",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\Alaa-Todo.vue",
-    "chunkName": "pages/Alaa-Todo",
-    "_name": "_56f21018"
+    "chunkName": "pages/Alaa-Todo"
+  },
+  {
+    "name": "ComponentL",
+    "path": "/ComponentL",
+    "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\ComponentL.vue",
+    "chunkName": "pages/ComponentL"
   },
   {
     "name": "inspire",
     "path": "/inspire",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_de3216ac"
+    "chunkName": "pages/inspire"
   },
   {
     "name": "l1",
     "path": "/l1",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\l1.vue",
-    "chunkName": "pages/l1",
-    "_name": "_3691f3b6"
+    "chunkName": "pages/l1"
   },
   {
     "name": "l2",
     "path": "/l2",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\l2.vue",
-    "chunkName": "pages/l2",
-    "_name": "_3675c4b4"
+    "chunkName": "pages/l2"
   },
   {
     "name": "l3",
     "path": "/l3",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\l3.vue",
-    "chunkName": "pages/l3",
-    "_name": "_365995b2"
+    "chunkName": "pages/l3"
   },
   {
     "name": "lesson1",
     "path": "/lesson1",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\lesson1.vue",
-    "chunkName": "pages/lesson1",
-    "_name": "_2458d449"
+    "chunkName": "pages/lesson1"
   },
   {
     "name": "To-Do List",
     "path": "/To-Do%20List",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\To-Do List.vue",
-    "chunkName": "pages/To-Do List",
-    "_name": "_649ce4c1"
+    "chunkName": "pages/To-Do List"
   },
   {
     "name": "todo",
     "path": "/todo",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\todo.vue",
-    "chunkName": "pages/todo",
-    "_name": "_050632b4"
+    "chunkName": "pages/todo"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\alaar\\\\OneDrive\\\\Desktop\\\\vuetifyTemplate\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_43a0c6bc"
+    "chunkName": "pages/index"
   }
 ]
