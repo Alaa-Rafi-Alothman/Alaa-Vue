@@ -85,6 +85,31 @@
             title: "Inspire",
             to: "/inspire",
           },
+          {
+            icon: "mdi-repeat",
+            title: "Componnent Lesson",
+            to: "/ComponentL",
+          },
+          {
+            icon: "mdi-account",
+            title: "Lesson 1",
+            to: "/l1",
+          },
+          {
+            icon: "mdi-account",
+            title: "Lesson 2",
+            to: "/l2",
+          },
+          {
+            icon: "mdi-account",
+            title: "Lesson 3",
+            to: "/l3",
+          },
+          {
+            icon: "mdi-message-text",
+            title: "Alaa To-Do List",
+            to: "/Alaa-Todo",
+          },
         ],
         miniVariant: false,
         right: true,
