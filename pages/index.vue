@@ -89,22 +89,55 @@
          <!--<v-alert v-if="apiResponse" type="success" class="mt-3">
             API Response: {{ apiResponse }}
           </v-alert>-->
-
-      <div v-for="item in apiResponse" :key="item.id" class="pa-4">
-     <!--<v-card class="d-inline-flex pa-2"></v-card>-->
+     <!--<div v-for="item in apiResponse" :key="item.id" class="pa-4">
+     <v-card class="d-inline-flex pa-2"></v-card>
         <v-img max-height="150" max-width="250" :src="item.image"></v-img>
         <p> ID: {{ item.id }}</p>
         <p> Name: {{ item.name }}</p>
         <p> Description: {{ item.description }}</p>
         <p> Is Destroyed: {{ item.isDestroyed }}</p>
-        <!--<p>Price: {{ item.price }}<span>$</span></p>-->
-      <v-divider class="ma-4"></v-divider>
-      
-    </div>
-    
+        <v-divider class="ma-4"></v-divider>
+        </div> 
+
           <v-alert v-if="apiError" type="error" class="mt-3">
             API Error: {{ apiError }}
           </v-alert>
+           <v-divider class="ma-4"></v-divider>-->
+          <v-card class="pa-8">
+
+            <!-- Table -->
+             <v-card v-if="apiResponse.length > 0" class="mt-4">
+          <template>
+          <v-data-table 
+          :headers="headers"
+          :items="apiResponse"
+          :per-page="5"
+          class="elevation-1"
+          >
+          
+          <!--Image in table-->
+         <template v-slot:item.image="{ item }">
+            <v-img :src="item.image" max-height="50" max-width="50"></v-img>
+          </template>
+           <!--Is Destroyed in table-->
+           <template v-slot:item.isDestroyed="{ item }">
+            <v-chip :color="item.isDestroyed ? 'red' : 'green'" dark>
+              {{ item.isDestroyed ? "Destroyed" : "Not Destroyed" }}
+            </v-chip>
+          </template>
+           <!--Button View Details in table-->
+           <template v-slot:item.actions="{ item }">
+            <v-btn
+              color="primary"
+              @click="() => $router.push(`/plannets/${item.id}`)">
+              View Details
+            </v-btn>
+          </template>
+
+          </v-data-table>
+          </template>
+          </v-card>
+          </v-card>
         </v-card-text>
      </v-card>
     </v-col>
@@ -117,21 +150,31 @@
     data() {
       return {
         loading: false,
-        apiResponse: null,
-        apiError: null,
+        apiResponse: [],
+        apiError: [],
+        headers:[
+          { text: 'ID', value: 'id' },
+          { text: 'Plannet Image', value: 'image' },
+          { text: 'Name', value: 'name' },
+          { text: 'Description', value: 'description' },
+          { text: 'Is Destroyed', value: 'isDestroyed' },
+          { text: "Actions", value: "actions" },
+          
+        ],
       }
     },
+  
+    
     methods: {
       async fetchData() {
         this.loading = true
-        this.apiResponse = null
-        this.apiError = null
+        this.apiResponse = []
+        this.apiError = []
 
         try {
           // Example API call using the configured axios instance
           const response = await this.$axios.get(
-           "https://dragonball-api.com/api/planets"
-      
+            "https://dragonball-api.com/api/planets"
           )
           this.apiResponse = response.data.items
         } catch (error) {
@@ -141,5 +184,16 @@
         }
       },
     },
+     async mounted() {
+      await this.fetchData()
+      // You can perform any initial setup here if needed
+    },
+  
   }
 </script>
+<style>
+  .labelTrue {
+    color: red;
+    font-weight: bold;
+  }
+</style>

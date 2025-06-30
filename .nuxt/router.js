@@ -14,6 +14,7 @@ const _2458d449 = () => interopDefault(import('..\\pages\\lesson1.vue' /* webpac
 const _649ce4c1 = () => interopDefault(import('..\\pages\\To-Do List.vue' /* webpackChunkName: "pages/To-Do List" */))
 const _050632b4 = () => interopDefault(import('..\\pages\\todo.vue' /* webpackChunkName: "pages/todo" */))
 const _43a0c6bc = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _5174106a = () => interopDefault(import('..\\pages\\plannets\\_id.vue' /* webpackChunkName: "pages/plannets/_id" */))
 
 const emptyFn = () => {}
 
@@ -66,6 +67,10 @@ export const routerOptions = {
     path: "/",
     component: _43a0c6bc,
     name: "index"
+  }, {
+    path: "/plannets/:id?",
+    component: _5174106a,
+    name: "plannets-id"
   }],
 
   fallback: false
