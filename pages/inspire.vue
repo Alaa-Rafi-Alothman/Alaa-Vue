@@ -43,7 +43,7 @@
       </v-col>
     </v-row>
     <!-- <v-card>{{ apiResponse }}</v-card> -->
-    <div v-for="item in filteredItems" :key="item.id" class="pa-4">
+     <div v-for="item in products" :key="item.id" class="pa-4">Add commentMore actions
       <v-card class="d-inline-flex pa-2">
         <v-img max-height="150" max-width="250" :src="item.image"></v-img>
         <p>Title: {{ item.title }}</p>
@@ -52,10 +52,22 @@
       </v-card>
       <v-divider class="ma-4"></v-divider>
     </div>
+    <v-divider class="my-5"></v-divider>
+    <h2>Planets</h2>
+    <div v-for="item in plannets" :key="item.id" class="pa-4">
+      <v-card class="d-inline-flex pa-2">
+        <v-img max-height="150" max-width="250" :src="item.image"></v-img>
+        <p>Name: {{ item.name }}</p>
+        <p>Description: {{ item.description }}</p>
+        <p>Is Destroyed: {{ item.isDestroyed }}<span>$</span></p>
+      </v-card>
+      <v-divider class="ma-4"></v-divider>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex"
 export default {
   name: "InspirePage",
   data() {
@@ -67,7 +79,7 @@ export default {
       maxPrice: null,
     }
   },
-  computed: {
+ /* computed: {
     filteredItems() {
       if (!this.apiResponse) return [];
       return this.apiResponse.filter(item => { // [1,3,5,7,9, 4,8]
@@ -83,20 +95,18 @@ export default {
         return matchesTitle && matchesMin && matchesMax;
       });
     }
-  },
+  },*/
   methods: {
-    async getData() {
-      try {
-        const response = await this.$axios.$get(
-          "https://fakestoreapi.com/products"
-        )
-        this.apiResponse = response
-        console.log(response)
-      } catch (error) {
-        console.error(error)
-      }
-    },
+    ...mapActions(["getProducts", "fetchData"]),
+    
   },
+  computed: {
+      ...mapState(["products", "plannets"]),
+    },
+  async mounted() {
+      await this.getProducts()
+      await this.fetchData()
+    },
 }
 </script>
 

@@ -176,7 +176,7 @@ import { mapState, mapActions } from "vuex"
     
     methods: {
      ...mapActions(["fetchData"]),
-
+      
     
     },
    computed: {
