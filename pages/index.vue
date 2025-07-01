@@ -106,15 +106,22 @@
           <v-card class="pa-8">
 
             <!-- Table -->
-             <v-card v-if="apiResponse.length > 0" class="mt-4">
+          <v-card v-if="plannets.length > 0" class="mt-4">
           <template>
           <v-data-table 
           :headers="headers"
-          :items="apiResponse"
+          :items="plannets"
           :per-page="5"
           class="elevation-1"
           >
-          
+          <!--search-->
+          <template v-slot:top>
+          <v-text-field
+          v-model="search"
+          label="Search (UPPER CASE ONLY)"
+          class="mx-4"
+        ></v-text-field>
+        </template>
           <!--Image in table-->
          <template v-slot:item.image="{ item }">
             <v-img :src="item.image" max-height="50" max-width="50"></v-img>
@@ -145,10 +152,12 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex"
   export default {
     name: "IndexPage",
     data() {
       return {
+        search: "",
         loading: false,
         apiResponse: [],
         apiError: [],
@@ -166,29 +175,17 @@
   
     
     methods: {
-      async fetchData() {
-        this.loading = true
-        this.apiResponse = []
-        this.apiError = []
+     ...mapActions(["fetchData"]),
 
-        try {
-          // Example API call using the configured axios instance
-          const response = await this.$axios.get(
-            "https://dragonball-api.com/api/planets"
-          )
-          this.apiResponse = response.data.items
-        } catch (error) {
-          this.apiError = error.message
-        } finally {
-          this.loading = false
-        }
-      },
+    
+    },
+   computed: {
+      ...mapState(["plannets"]),
     },
      async mounted() {
       await this.fetchData()
-      // You can perform any initial setup here if needed
     },
-  
+    
   }
 </script>
 <style>
