@@ -6,11 +6,13 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _56f21018 = () => interopDefault(import('..\\pages\\Alaa-Todo.vue' /* webpackChunkName: "pages/Alaa-Todo" */))
 const _42721aef = () => interopDefault(import('..\\pages\\ComponentL.vue' /* webpackChunkName: "pages/ComponentL" */))
+const _6156bebe = () => interopDefault(import('..\\pages\\food.vue' /* webpackChunkName: "pages/food" */))
 const _de3216ac = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
 const _3691f3b6 = () => interopDefault(import('..\\pages\\l1.vue' /* webpackChunkName: "pages/l1" */))
 const _3675c4b4 = () => interopDefault(import('..\\pages\\l2.vue' /* webpackChunkName: "pages/l2" */))
 const _365995b2 = () => interopDefault(import('..\\pages\\l3.vue' /* webpackChunkName: "pages/l3" */))
 const _2458d449 = () => interopDefault(import('..\\pages\\lesson1.vue' /* webpackChunkName: "pages/lesson1" */))
+const _33d7433e = () => interopDefault(import('..\\pages\\products\\index.vue' /* webpackChunkName: "pages/products/index" */))
 const _649ce4c1 = () => interopDefault(import('..\\pages\\To-Do List.vue' /* webpackChunkName: "pages/To-Do List" */))
 const _050632b4 = () => interopDefault(import('..\\pages\\todo.vue' /* webpackChunkName: "pages/todo" */))
 const _43a0c6bc = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
@@ -36,6 +38,10 @@ export const routerOptions = {
     component: _42721aef,
     name: "ComponentL"
   }, {
+    path: "/food",
+    component: _6156bebe,
+    name: "food"
+  }, {
     path: "/inspire",
     component: _de3216ac,
     name: "inspire"
@@ -55,6 +61,10 @@ export const routerOptions = {
     path: "/lesson1",
     component: _2458d449,
     name: "lesson1"
+  }, {
+    path: "/products",
+    component: _33d7433e,
+    name: "products"
   }, {
     path: "/To-Do%20List",
     component: _649ce4c1,
