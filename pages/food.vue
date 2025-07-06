@@ -36,20 +36,25 @@
         <v-card-title>{{ editForm ? "Edit Dish" : "Add a Dish" }}</v-card-title>
         <v-card-text>
           <v-text-field v-model="item.name" label="Dish Name"></v-text-field>
+          
           <v-text-field
             v-model="item.description"
             label="Dish Details"
           ></v-text-field>
+
           <v-text-field
             v-model="item.price"
             label="Price"
             type="number"
           ></v-text-field>
+
           <v-text-field v-model="item.image" label="Image"></v-text-field>
+          
           <v-text-field
             v-model="item.ingredients"
             label="Ingredients (comma separated)"
           ></v-text-field>
+
         </v-card-text>
         <v-card-actions>
           <v-btn color="primary" @click="submitDish">{{
@@ -107,15 +112,22 @@
         this.foodForm = true
       },
       async submitDish() {
-        !this.editForm
-          ? (this.item.ingredients = this.item.ingredients
+      //  !this.editForm
+      //    ? (this.item.ingredients = this.item.ingredients
+      //         .split(",")
+      //         .map((ingredient) => ingredient.trim()))
+      //     : (this.item.ingredients = this.item.ingredients)
+        if(this.editForm){
+          this.item.ingredients = this.item.ingredients
               .split(",")
-              .map((ingredient) => ingredient.trim()))
-          : (this.item.ingredients = this.item.ingredients)
-        this.editForm
+              .map((ingredient) => ingredient.trim())
+        }
+        else{this.item.ingredients = this.item.ingredients}
+          this.editForm
           ? await this.updateFood(this.item)
           : await this.createFood(this.item)
         this.foodForm = false
+        this.editForm=false
         this.item = {
           image: "",
           name: "",

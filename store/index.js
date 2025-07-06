@@ -119,7 +119,7 @@ export const actions = {
 
     try {
       const response = await this.$axios.put(
-        `https://food.outcropmediaa.com/api/foods/${item.id}`,
+        `https://food.outcropmediaa.com/api/foods/${food.id}`,
         food
       )
       commit("Update_food", response.data) // Update the foods state with the updated food item
